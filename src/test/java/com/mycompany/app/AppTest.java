@@ -33,19 +33,31 @@ public class AppTest {
 		App.main(null);
 		try {
 			assertEquals("Hello World!" + System.getProperty("line.separator"), outContent.toString());
+		} catch (AssertionError e) {
+			fail("\"message\" is not \"Hello World!\"");
+		}
+		try {
 			testCalculatorAdd(1, 1, 2);
 			testCalculatorMinus(5, 3, 2);
 		} catch (AssertionError e) {
-			fail("\"message\" is not \"Hello World!\"");
+			fail("Error" + e.getMessage());
 		}
 	}
 
 	public void testCalculatorAdd(int x, int y, int sum) {
-		assertEquals(x + y, sum);
+		try {
+			assertEquals(x + y, sum);
+		} catch (AssertionError e) {
+			throw new AssertionError("Tong sai roi nhe");
+		}
 	}
-	
+
 	public void testCalculatorMinus(int x, int y, int minus) {
-		assertEquals(x + y, minus);
+		try {
+			assertEquals(x + y, minus);
+		} catch (AssertionError e) {
+			throw new AssertionError("Tinh hieu sai roi nhe");
+		}
 	}
 
 	@After
