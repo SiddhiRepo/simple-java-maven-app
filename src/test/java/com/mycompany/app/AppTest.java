@@ -40,7 +40,7 @@ public class AppTest {
 			testCalculatorAdd(1, 1, 2);
 			testCalculatorMinus(5, 3, 2);
 		} catch (AssertionError e) {
-			fail("Error" + e.getMessage());
+			fail("Loi: " + e.getMessage());
 		}
 	}
 
@@ -48,15 +48,15 @@ public class AppTest {
 		try {
 			assertEquals(x + y, sum);
 		} catch (AssertionError e) {
-			throw new AssertionError("Tong sai roi nhe");
+			throw new AssertionError("Tong sai roi nhe: " + x + " + " + y + "=" + sum);
 		}
 	}
 
 	public void testCalculatorMinus(int x, int y, int minus) {
 		try {
-			assertEquals(x + y, minus);
+			assertEquals(x - y, minus);
 		} catch (AssertionError e) {
-			throw new AssertionError("Tinh hieu sai roi nhe");
+			throw new AssertionError("Tinh hieu sai roi nhe: " + x + " - " + y + "=" + minus);
 		}
 	}
 
