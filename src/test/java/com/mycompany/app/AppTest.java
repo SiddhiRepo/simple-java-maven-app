@@ -37,7 +37,7 @@ public class AppTest {
 //			fail("\"message\" is not \"Hello World!\"");
 //		}
 		try {
-			testCalculatorAdd(3, 3, 6);
+			testCalculatorAdd(3, 2, 5);
 			testCalculatorMinus(5, 1, 4);
 		} catch (AssertionError e) {
 			fail("Loi: " + e.getMessage());
