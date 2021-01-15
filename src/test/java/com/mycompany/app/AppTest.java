@@ -38,7 +38,7 @@ public class AppTest {
 //		}
 		try {
 			testCalculatorAdd(3, 3, 6);
-			testCalculatorMinus(5, 1, 4);
+			testCalculatorMinus(5, 1, 1);
 		} catch (AssertionError e) {
 			fail("Loi: " + e.getMessage());
 		}
